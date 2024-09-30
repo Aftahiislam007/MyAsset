@@ -27,8 +27,10 @@ SECRET_KEY = 'django-insecure-dj@q_s=q*&np4sp8&l##t&%g$jn&5w&6yx%4r110=-td%z((tf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+# ALLOWED_HOSTS = ['.vercel.app', '198.211.99.20', 'localhost', '127.0.0.1']
 
+
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1']
 
 # Application definition
 
@@ -44,6 +46,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap4',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -122,13 +126,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
+
+# import os
 
 STATICFILES_DIRS = [
     BASE_DIR/ "static"
 ]
 
+# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+
 STATIC_ROOT = (BASE_DIR/"assets")
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 MEDIA_ROOT = (BASE_DIR/ 'media')
 
